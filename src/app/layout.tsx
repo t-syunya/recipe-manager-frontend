@@ -24,80 +24,111 @@ import NextAuthSessionProvider from "./SessionProvider";
 import RequireAuth from "./components/RequireAuth";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+	variable: "--font-geist-sans",
+	subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+	variable: "--font-geist-mono",
+	subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Recipe Manager",
-  description: "Figma MCP風レシピ管理アプリ（Next.js＋MUI）",
+	title: "Recipe Manager",
+	description: "Figma MCP風レシピ管理アプリ（Next.js＋MUI）",
 };
 
 const drawerWidth = 240;
 
 const navItems = [
-  { label: "Recipe List", href: "/recipes", icon: <ListAltIcon /> },
-  { label: "Shopping List", href: "/shopping", icon: <ShoppingCartIcon /> },
-  { label: "レシピ検索・登録", href: "/recipes/search", icon: <SearchIcon /> },
+	{ label: "Recipe List", href: "/recipes", icon: <ListAltIcon /> },
+	{ label: "Shopping List", href: "/shopping", icon: <ShoppingCartIcon /> },
+	{ label: "レシピ検索・登録", href: "/recipes/search", icon: <SearchIcon /> },
 ];
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}> 
-        <MuiThemeProvider>
-          <NextAuthSessionProvider>
-            <RequireAuth>
-              <Box sx={{ display: "flex", minHeight: "100vh", background: "#F7FAFC" }}>
-                <Drawer
-                  variant="permanent"
-                  sx={{
-                    width: drawerWidth,
-                    flexShrink: 0,
-                    [`& .MuiDrawer-paper`]: {
-                      width: drawerWidth,
-                      boxSizing: "border-box",
-                      background: "#F7FAFC",
-                      borderRight: "1px solid #E5E8EB",
-                    },
-                  }}
-                >
-                  <Box sx={{ display: "flex", alignItems: "center", gap: 2, p: 3, pb: 1 }}>
-                    <HomeIcon color="primary" fontSize="large" />
-                    <span style={{ fontWeight: 700, fontSize: 20 }}>Recipe Manager</span>
-                    <Box sx={{ flexGrow: 1 }} />
-                  </Box>
-                  <List>
-                    {navItems.map((item) => (
-                      <ListItem key={item.href} disablePadding>
-                        <ListItemButton component={Link} href={item.href}>
-                          <ListItemIcon>{item.icon}</ListItemIcon>
-                          <ListItemText primary={item.label} />
-                        </ListItemButton>
-                      </ListItem>
-                    ))}
-                  </List>
-                </Drawer>
-                <Box component="main" sx={{ flexGrow: 1, p: 4, minHeight: "100vh", position: "relative" }}>
-                  <Box sx={{ position: "absolute", top: 24, right: 32, zIndex: 10 }}>
-                    <AuthMenu />
-                  </Box>
-                  {children}
-                </Box>
-              </Box>
-            </RequireAuth>
-          </NextAuthSessionProvider>
-        </MuiThemeProvider>
-      </body>
-    </html>
-  );
+	return (
+		<html lang="en">
+			<body className={`${geistSans.variable} ${geistMono.variable}`}>
+				<MuiThemeProvider>
+					<NextAuthSessionProvider>
+						<RequireAuth>
+							<Box
+								sx={{
+									display: "flex",
+									minHeight: "100vh",
+									background: "#F7FAFC",
+								}}
+							>
+								<Drawer
+									variant="permanent"
+									sx={{
+										width: drawerWidth,
+										flexShrink: 0,
+										[`& .MuiDrawer-paper`]: {
+											width: drawerWidth,
+											boxSizing: "border-box",
+											background: "#F7FAFC",
+											borderRight: "1px solid #E5E8EB",
+										},
+									}}
+								>
+									<Box
+										sx={{
+											display: "flex",
+											alignItems: "center",
+											gap: 2,
+											p: 3,
+											pb: 1,
+										}}
+									>
+										<HomeIcon color="primary" fontSize="large" />
+										<span style={{ fontWeight: 700, fontSize: 20 }}>
+											Recipe Manager
+										</span>
+										<Box sx={{ flexGrow: 1 }} />
+									</Box>
+									<List>
+										{navItems.map((item) => (
+											<ListItem key={item.href} disablePadding>
+												<ListItemButton component={Link} href={item.href}>
+													<ListItemIcon>{item.icon}</ListItemIcon>
+													<ListItemText primary={item.label} />
+												</ListItemButton>
+											</ListItem>
+										))}
+									</List>
+								</Drawer>
+								<Box
+									component="main"
+									sx={{
+										flexGrow: 1,
+										p: 4,
+										minHeight: "100vh",
+										position: "relative",
+									}}
+								>
+									<Box
+										sx={{
+											position: "absolute",
+											top: 24,
+											right: 32,
+											zIndex: 10,
+										}}
+									>
+										<AuthMenu />
+									</Box>
+									{children}
+								</Box>
+							</Box>
+						</RequireAuth>
+					</NextAuthSessionProvider>
+				</MuiThemeProvider>
+			</body>
+		</html>
+	);
 }
