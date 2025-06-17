@@ -103,7 +103,7 @@ export default function RecipeDetailPage() {
 				</Typography>
 				<ol style={{ marginTop: 0 }}>
 					{recipe.steps.map((step, idx) => (
-						<li key={idx}>
+						<li key={`step-${idx}-${step.slice(0, 10)}`}>
 							<Typography variant="body2">{step}</Typography>
 						</li>
 					))}

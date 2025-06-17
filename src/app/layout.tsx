@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import * as React from "react";
+import type * as React from "react";
 import Link from "next/link";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -69,7 +69,7 @@ export default function RootLayout({
 									sx={{
 										width: drawerWidth,
 										flexShrink: 0,
-										[`& .MuiDrawer-paper`]: {
+										"& .MuiDrawer-paper": {
 											width: drawerWidth,
 											boxSizing: "border-box",
 											background: "#F7FAFC",

@@ -14,9 +14,27 @@ import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import Link from "next/link";
 
+interface SearchResult {
+	title: string;
+	url: string;
+	description: string;
+}
+
+interface GoogleSearchItem {
+	title: string;
+	link: string;
+	snippet: string;
+}
+
+interface BraveSearchItem {
+	title: string;
+	url: string;
+	description: string;
+}
+
 export default function RecipesSearchPage() {
 	const [keyword, setKeyword] = React.useState("");
-	const [results, setResults] = React.useState<any[]>([]);
+	const [results, setResults] = React.useState<SearchResult[]>([]);
 	const [engine, setEngine] = React.useState<string>("");
 	const [loading, setLoading] = React.useState(false);
 	const [error, setError] = React.useState("");
@@ -33,7 +51,7 @@ export default function RecipesSearchPage() {
 			setEngine(data.engine);
 			if (data.engine === "google") {
 				setResults(
-					(data.items || []).map((item: any) => ({
+					(data.items || []).map((item: GoogleSearchItem) => ({
 						title: item.title,
 						url: item.link,
 						description: item.snippet,
@@ -41,7 +59,7 @@ export default function RecipesSearchPage() {
 				);
 			} else if (data.engine === "brave") {
 				setResults(
-					(data.web?.results || []).map((item: any) => ({
+					(data.web?.results || []).map((item: BraveSearchItem) => ({
 						title: item.title,
 						url: item.url,
 						description: item.description,
@@ -50,8 +68,9 @@ export default function RecipesSearchPage() {
 			} else {
 				setResults([]);
 			}
-		} catch (e: any) {
-			setError(e.message || "エラーが発生しました");
+		} catch (e: unknown) {
+			const message = e instanceof Error ? e.message : "エラーが発生しました";
+			setError(message);
 		} finally {
 			setLoading(false);
 		}

@@ -74,7 +74,7 @@ export default function ShoppingListPage() {
 					</TableHead>
 					<TableBody>
 						{items.map((row, idx) => (
-							<TableRow key={row.name + idx}>
+							<TableRow key={`${row.name}-${row.quantity}-${idx}`}>
 								<TableCell>{row.name}</TableCell>
 								<TableCell>{row.quantity}</TableCell>
 								<TableCell>
