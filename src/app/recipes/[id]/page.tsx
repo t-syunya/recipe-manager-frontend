@@ -12,42 +12,36 @@ import Link from "next/link";
 const recipes = [
 	{
 		id: "1",
-		name: "Pasta Carbonara",
-		category: "Italian",
-		tags: ["Pasta", "Creamy"],
-		description: "A classic Italian pasta dish with creamy sauce.",
+		name: "カルボナーラ",
+		category: "イタリアン",
+		tags: ["パスタ", "クリーミー"],
+		description: "クリーミーなソースが美味しい定番イタリアンパスタです。",
 		ingredients: [
-			"Spaghetti",
-			"Eggs",
-			"Pancetta",
-			"Parmesan cheese",
-			"Black pepper",
+			"スパゲッティ",
+			"卵",
+			"パンチェッタ",
+			"パルメザンチーズ",
+			"黒胡椒",
 		],
 		steps: [
-			"Boil pasta.",
-			"Cook pancetta.",
-			"Mix eggs and cheese.",
-			"Combine all and serve.",
+			"パスタを茹でる。",
+			"パンチェッタを炒める。",
+			"卵とチーズを混ぜる。",
+			"全てを合わせて盛り付ける。",
 		],
 	},
 	{
 		id: "2",
-		name: "Chicken Stir-Fry",
-		category: "Asian",
-		tags: ["Chicken", "Stir-Fry"],
-		description: "Quick and healthy chicken stir-fry.",
-		ingredients: [
-			"Chicken breast",
-			"Vegetables",
-			"Soy sauce",
-			"Garlic",
-			"Ginger",
-		],
+		name: "チキン炒め",
+		category: "中華",
+		tags: ["鶏肉", "炒め物"],
+		description: "素早く作れてヘルシーなチキン炒めです。",
+		ingredients: ["鶏胸肉", "野菜ミックス", "醤油", "ニンニク", "生姜"],
 		steps: [
-			"Slice chicken and veggies.",
-			"Stir-fry chicken.",
-			"Add veggies and sauce.",
-			"Serve hot.",
+			"鶏肉と野菜を切る。",
+			"鶏肉を炒める。",
+			"野菜とソースを加える。",
+			"熱々で盛り付ける。",
 		],
 	},
 	// ...他のレシピも同様に追加可
@@ -79,7 +73,7 @@ export default function RecipeDetailPage() {
 						size="small"
 						sx={{ borderRadius: 2 }}
 					>
-						Edit
+						編集
 					</Button>
 				</Stack>
 				<Typography variant="subtitle1" color="text.secondary" mb={1}>
@@ -89,7 +83,7 @@ export default function RecipeDetailPage() {
 					{recipe.description}
 				</Typography>
 				<Typography variant="h6" fontWeight={600} mb={1}>
-					Ingredients
+					材料
 				</Typography>
 				<ul style={{ marginTop: 0, marginBottom: 16 }}>
 					{recipe.ingredients.map((item) => (
@@ -99,7 +93,7 @@ export default function RecipeDetailPage() {
 					))}
 				</ul>
 				<Typography variant="h6" fontWeight={600} mb={1}>
-					Steps
+					作り方
 				</Typography>
 				<ol style={{ marginTop: 0 }}>
 					{recipe.steps.map((step, idx) => (

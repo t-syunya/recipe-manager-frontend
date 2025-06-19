@@ -15,17 +15,17 @@ export default function SettingsPage() {
 		<Box maxWidth={500} mx="auto">
 			<Paper sx={{ p: 4, borderRadius: 3, boxShadow: 2 }}>
 				<Typography variant="h4" fontWeight={700} mb={2}>
-					Settings
+					設定
 				</Typography>
 				<Stack spacing={2}>
 					<TextField
-						label="User Name"
+						label="ユーザー名"
 						value={name}
 						onChange={(e) => setName(e.target.value)}
 						fullWidth
 					/>
 					<TextField
-						label="Email"
+						label="メールアドレス"
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
 						fullWidth
@@ -35,7 +35,7 @@ export default function SettingsPage() {
 						color="primary"
 						sx={{ borderRadius: 2, mt: 2 }}
 					>
-						Save
+						保存
 					</Button>
 				</Stack>
 			</Paper>

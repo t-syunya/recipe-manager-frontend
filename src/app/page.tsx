@@ -8,7 +8,7 @@ export default function Home() {
 	return (
 		<Box>
 			<Typography variant="h3" fontWeight={700} mb={2}>
-				Welcome to Recipe Manager
+				レシピマネージャーへようこそ
 			</Typography>
 			<Typography variant="h6" color="text.secondary" mb={4}>
 				管理・検索・登録が簡単なレシピアプリ

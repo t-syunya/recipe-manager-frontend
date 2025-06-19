@@ -14,10 +14,10 @@ import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 
 const initialItems = [
-	{ name: "Spaghetti", quantity: "2 packs" },
-	{ name: "Eggs", quantity: "6" },
-	{ name: "Chicken breast", quantity: "500g" },
-	{ name: "Soy sauce", quantity: "1 bottle" },
+	{ name: "スパゲッティ", quantity: "2パック" },
+	{ name: "卵", quantity: "6個" },
+	{ name: "鶏胸肉", quantity: "500g" },
+	{ name: "醤油", quantity: "1本" },
 ];
 
 export default function ShoppingListPage() {
@@ -39,17 +39,17 @@ export default function ShoppingListPage() {
 	return (
 		<Box>
 			<Typography variant="h4" fontWeight={700} mb={3}>
-				Shopping List
+				買い物リスト
 			</Typography>
 			<Stack direction="row" spacing={2} mb={2}>
 				<TextField
-					label="Item"
+					label="商品名"
 					value={name}
 					onChange={(e) => setName(e.target.value)}
 					size="small"
 				/>
 				<TextField
-					label="Quantity"
+					label="数量"
 					value={quantity}
 					onChange={(e) => setQuantity(e.target.value)}
 					size="small"
@@ -60,16 +60,16 @@ export default function ShoppingListPage() {
 					onClick={handleAdd}
 					sx={{ borderRadius: 2 }}
 				>
-					Add
+					追加
 				</Button>
 			</Stack>
 			<TableContainer component={Paper} sx={{ borderRadius: 3, boxShadow: 1 }}>
 				<Table>
 					<TableHead>
 						<TableRow>
-							<TableCell>Item</TableCell>
-							<TableCell>Quantity</TableCell>
-							<TableCell>Actions</TableCell>
+							<TableCell>商品名</TableCell>
+							<TableCell>数量</TableCell>
+							<TableCell>操作</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -85,7 +85,7 @@ export default function ShoppingListPage() {
 										sx={{ borderRadius: 2 }}
 										onClick={() => handleDelete(idx)}
 									>
-										Delete
+										削除
 									</Button>
 								</TableCell>
 							</TableRow>

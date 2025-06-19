@@ -19,29 +19,29 @@ export default function RecipeNewPage() {
 		<Box maxWidth={600} mx="auto">
 			<Paper sx={{ p: 4, borderRadius: 3, boxShadow: 2 }}>
 				<Typography variant="h4" fontWeight={700} mb={2}>
-					New Recipe
+					新しいレシピ
 				</Typography>
 				<Stack spacing={2}>
 					<TextField
-						label="Title"
+						label="レシピ名"
 						value={name}
 						onChange={(e) => setName(e.target.value)}
 						fullWidth
 					/>
 					<TextField
-						label="Category"
+						label="カテゴリ"
 						value={category}
 						onChange={(e) => setCategory(e.target.value)}
 						fullWidth
 					/>
 					<TextField
-						label="Tags (comma separated)"
+						label="タグ (カンマ区切り)"
 						value={tags}
 						onChange={(e) => setTags(e.target.value)}
 						fullWidth
 					/>
 					<TextField
-						label="Description"
+						label="説明"
 						value={description}
 						onChange={(e) => setDescription(e.target.value)}
 						fullWidth
@@ -49,7 +49,7 @@ export default function RecipeNewPage() {
 						minRows={2}
 					/>
 					<TextField
-						label="Ingredients (one per line)"
+						label="材料 (1行に1つずつ)"
 						value={ingredients}
 						onChange={(e) => setIngredients(e.target.value)}
 						fullWidth
@@ -57,7 +57,7 @@ export default function RecipeNewPage() {
 						minRows={3}
 					/>
 					<TextField
-						label="Steps (one per line)"
+						label="作り方 (1行に1ステップずつ)"
 						value={steps}
 						onChange={(e) => setSteps(e.target.value)}
 						fullWidth
@@ -69,7 +69,7 @@ export default function RecipeNewPage() {
 						color="primary"
 						sx={{ borderRadius: 2, mt: 2 }}
 					>
-						Save
+						保存
 					</Button>
 				</Stack>
 			</Paper>

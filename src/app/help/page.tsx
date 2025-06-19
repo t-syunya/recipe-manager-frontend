@@ -11,7 +11,7 @@ export default function HelpPage() {
 		<Box maxWidth={600} mx="auto">
 			<Paper sx={{ p: 4, borderRadius: 3, boxShadow: 2 }}>
 				<Typography variant="h4" fontWeight={700} mb={2}>
-					Help
+					ヘルプ
 				</Typography>
 				<Typography variant="body1" mb={2}>
 					よくある質問やアプリの使い方はこちらをご覧ください。
@@ -20,7 +20,7 @@ export default function HelpPage() {
 					<ListItem>
 						<ListItemText
 							primary="Q. レシピを追加するには？"
-							secondary="→ サイドバーの『New Recipe』または『Search & Register』から追加できます。"
+							secondary="→ サイドバーの『新しいレシピ』または『レシピ検索・登録』から追加できます。"
 						/>
 					</ListItem>
 					<ListItem>

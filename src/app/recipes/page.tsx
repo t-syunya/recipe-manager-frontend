@@ -14,33 +14,33 @@ import Link from "next/link";
 const recipes = [
 	{
 		id: "1",
-		name: "Pasta Carbonara",
-		category: "Italian",
-		tags: "Pasta, Creamy",
+		name: "カルボナーラ",
+		category: "イタリアン",
+		tags: "パスタ, クリーミー",
 	},
 	{
 		id: "2",
-		name: "Chicken Stir-Fry",
-		category: "Asian",
-		tags: "Chicken, Stir-Fry",
+		name: "チキン炒め",
+		category: "中華",
+		tags: "鶏肉, 炒め物",
 	},
 	{
 		id: "3",
-		name: "Vegetable Curry",
-		category: "Indian",
-		tags: "Vegetarian, Curry",
+		name: "野菜カレー",
+		category: "インド",
+		tags: "ベジタリアン, カレー",
 	},
 	{
 		id: "4",
-		name: "Beef Tacos",
-		category: "Mexican",
-		tags: "Beef, Tacos",
+		name: "ビーフタコス",
+		category: "メキシカン",
+		tags: "牛肉, タコス",
 	},
 	{
 		id: "5",
-		name: "Salmon with Asparagus",
-		category: "Seafood",
-		tags: "Salmon, Healthy",
+		name: "サーモンとアスパラガス",
+		category: "シーフード",
+		tags: "サーモン, ヘルシー",
 	},
 ];
 
@@ -54,7 +54,7 @@ export default function RecipeListPage() {
 				mb={3}
 			>
 				<Typography variant="h4" fontWeight={700}>
-					My Recipes
+					レシピ一覧
 				</Typography>
 				<Button
 					component={Link}
@@ -63,17 +63,17 @@ export default function RecipeListPage() {
 					color="primary"
 					sx={{ borderRadius: 2 }}
 				>
-					New Recipe
+					新しいレシピ
 				</Button>
 			</Box>
 			<TableContainer component={Paper} sx={{ borderRadius: 3, boxShadow: 1 }}>
 				<Table>
 					<TableHead>
 						<TableRow>
-							<TableCell>Recipe</TableCell>
-							<TableCell>Category</TableCell>
-							<TableCell>Tags</TableCell>
-							<TableCell>Actions</TableCell>
+							<TableCell>レシピ名</TableCell>
+							<TableCell>カテゴリ</TableCell>
+							<TableCell>タグ</TableCell>
+							<TableCell>操作</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
@@ -90,7 +90,7 @@ export default function RecipeListPage() {
 										size="small"
 										sx={{ borderRadius: 2 }}
 									>
-										View
+										詳細
 									</Button>
 								</TableCell>
 							</TableRow>

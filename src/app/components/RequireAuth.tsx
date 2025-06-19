@@ -14,7 +14,7 @@ export default function RequireAuth({
 	}, [status]);
 
 	if (status === "loading") {
-		return <div>Loading...</div>;
+		return <div>読み込み中...</div>;
 	}
 
 	if (status === "authenticated") {

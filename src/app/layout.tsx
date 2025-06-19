@@ -41,8 +41,8 @@ export const metadata: Metadata = {
 const drawerWidth = 240;
 
 const navItems = [
-	{ label: "Recipe List", href: "/recipes", icon: <ListAltIcon /> },
-	{ label: "Shopping List", href: "/shopping", icon: <ShoppingCartIcon /> },
+	{ label: "レシピ一覧", href: "/recipes", icon: <ListAltIcon /> },
+	{ label: "買い物リスト", href: "/shopping", icon: <ShoppingCartIcon /> },
 	{ label: "レシピ検索・登録", href: "/recipes/search", icon: <SearchIcon /> },
 ];
 
@@ -52,7 +52,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="ja">
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
 				<MuiThemeProvider>
 					<NextAuthSessionProvider>
