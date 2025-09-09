@@ -12,42 +12,36 @@ import Chip from "@mui/material/Chip";
 const recipes = [
 	{
 		id: "1",
-		name: "Pasta Carbonara",
-		category: "Italian",
-		tags: ["Pasta", "Creamy"],
-		description: "A classic Italian pasta dish with creamy sauce.",
+		name: "カルボナーラ",
+		category: "イタリアン",
+		tags: ["パスタ", "クリーミー"],
+		description: "クリーミーなソースが美味しい定番イタリアンパスタです。",
 		ingredients: [
-			"Spaghetti",
-			"Eggs",
-			"Pancetta",
-			"Parmesan cheese",
-			"Black pepper",
+			"スパゲッティ",
+			"卵",
+			"パンチェッタ",
+			"パルメザンチーズ",
+			"黒胡椒",
 		],
 		steps: [
-			"Boil pasta.",
-			"Cook pancetta.",
-			"Mix eggs and cheese.",
-			"Combine all and serve.",
+			"パスタを茹でる。",
+			"パンチェッタを炒める。",
+			"卵とチーズを混ぜる。",
+			"全てを合わせて盛り付ける。",
 		],
 	},
 	{
 		id: "2",
-		name: "Chicken Stir-Fry",
-		category: "Asian",
-		tags: ["Chicken", "Stir-Fry"],
-		description: "Quick and healthy chicken stir-fry.",
-		ingredients: [
-			"Chicken breast",
-			"Vegetables",
-			"Soy sauce",
-			"Garlic",
-			"Ginger",
-		],
+		name: "チキン炒め",
+		category: "中華",
+		tags: ["鶏肉", "炒め物"],
+		description: "素早く作れてヘルシーなチキン炒めです。",
+		ingredients: ["鶏胸肉", "野菜ミックス", "醤油", "ニンニク", "生姜"],
 		steps: [
-			"Slice chicken and veggies.",
-			"Stir-fry chicken.",
-			"Add veggies and sauce.",
-			"Serve hot.",
+			"鶏肉と野菜を切る。",
+			"鶏肉を炒める。",
+			"野菜とソースを加える。",
+			"熱々で盛り付ける。",
 		],
 	},
 ];
@@ -70,29 +64,29 @@ export default function RecipeEditPage() {
 		<Box maxWidth={600} mx="auto">
 			<Paper sx={{ p: 4, borderRadius: 3, boxShadow: 2 }}>
 				<Typography variant="h4" fontWeight={700} mb={2}>
-					Edit Recipe
+					レシピを編集
 				</Typography>
 				<Stack spacing={2}>
 					<TextField
-						label="Title"
+						label="レシピ名"
 						value={name}
 						onChange={(e) => setName(e.target.value)}
 						fullWidth
 					/>
 					<TextField
-						label="Category"
+						label="カテゴリ"
 						value={category}
 						onChange={(e) => setCategory(e.target.value)}
 						fullWidth
 					/>
 					<TextField
-						label="Tags (comma separated)"
+						label="タグ (カンマ区切り)"
 						value={tags}
 						onChange={(e) => setTags(e.target.value)}
 						fullWidth
 					/>
 					<TextField
-						label="Description"
+						label="説明"
 						value={description}
 						onChange={(e) => setDescription(e.target.value)}
 						fullWidth
@@ -100,7 +94,7 @@ export default function RecipeEditPage() {
 						minRows={2}
 					/>
 					<TextField
-						label="Ingredients (one per line)"
+						label="材料 (1行に1つずつ)"
 						value={ingredients}
 						onChange={(e) => setIngredients(e.target.value)}
 						fullWidth
@@ -108,7 +102,7 @@ export default function RecipeEditPage() {
 						minRows={3}
 					/>
 					<TextField
-						label="Steps (one per line)"
+						label="作り方 (1行に1ステップずつ)"
 						value={steps}
 						onChange={(e) => setSteps(e.target.value)}
 						fullWidth
@@ -120,7 +114,7 @@ export default function RecipeEditPage() {
 						color="primary"
 						sx={{ borderRadius: 2, mt: 2 }}
 					>
-						Save
+						保存
 					</Button>
 				</Stack>
 			</Paper>

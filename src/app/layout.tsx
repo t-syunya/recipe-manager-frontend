@@ -22,6 +22,7 @@ import MuiThemeProvider from "./ThemeProvider";
 import AuthMenu from "./components/AuthMenu";
 import NextAuthSessionProvider from "./SessionProvider";
 import RequireAuth from "./components/RequireAuth";
+import ThemeToggle from "./components/ThemeToggle";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -41,8 +42,8 @@ export const metadata: Metadata = {
 const drawerWidth = 240;
 
 const navItems = [
-	{ label: "Recipe List", href: "/recipes", icon: <ListAltIcon /> },
-	{ label: "Shopping List", href: "/shopping", icon: <ShoppingCartIcon /> },
+	{ label: "レシピ一覧", href: "/recipes", icon: <ListAltIcon /> },
+	{ label: "買い物リスト", href: "/shopping", icon: <ShoppingCartIcon /> },
 	{ label: "レシピ検索・登録", href: "/recipes/search", icon: <SearchIcon /> },
 ];
 
@@ -52,7 +53,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="ja">
 			<body className={`${geistSans.variable} ${geistMono.variable}`}>
 				<MuiThemeProvider>
 					<NextAuthSessionProvider>
@@ -61,7 +62,7 @@ export default function RootLayout({
 								sx={{
 									display: "flex",
 									minHeight: "100vh",
-									background: "#F7FAFC",
+									bgcolor: "background.default",
 								}}
 							>
 								<Drawer
@@ -72,8 +73,9 @@ export default function RootLayout({
 										"& .MuiDrawer-paper": {
 											width: drawerWidth,
 											boxSizing: "border-box",
-											background: "#F7FAFC",
-											borderRight: "1px solid #E5E8EB",
+											bgcolor: "background.default",
+											borderRight: "1px solid",
+											borderColor: "divider",
 										},
 									}}
 								>
@@ -86,11 +88,24 @@ export default function RootLayout({
 											pb: 1,
 										}}
 									>
-										<HomeIcon color="primary" fontSize="large" />
-										<span style={{ fontWeight: 700, fontSize: 20 }}>
-											Recipe Manager
-										</span>
+										<Link
+											href="/"
+											style={{
+												display: "flex",
+												alignItems: "center",
+												gap: 16,
+												textDecoration: "none",
+												color: "inherit",
+												cursor: "pointer",
+											}}
+										>
+											<HomeIcon color="primary" fontSize="large" />
+											<span style={{ fontWeight: 700, fontSize: 20 }}>
+												Recipe Manager
+											</span>
+										</Link>
 										<Box sx={{ flexGrow: 1 }} />
+										<ThemeToggle />
 									</Box>
 									<List>
 										{navItems.map((item) => (
@@ -110,6 +125,7 @@ export default function RootLayout({
 										p: 4,
 										minHeight: "100vh",
 										position: "relative",
+										bgcolor: "background.default",
 									}}
 								>
 									<Box

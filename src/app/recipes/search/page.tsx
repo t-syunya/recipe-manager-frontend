@@ -115,11 +115,19 @@ export default function RecipesSearchPage() {
 			<TableContainer component={Paper} sx={{ borderRadius: 3, boxShadow: 1 }}>
 				<Table>
 					<TableHead>
-						<TableRow>
-							<TableCell>タイトル</TableCell>
-							<TableCell>URL</TableCell>
-							<TableCell>説明</TableCell>
-							<TableCell>操作</TableCell>
+						<TableRow sx={{ bgcolor: "grey.100" }}>
+							<TableCell sx={{ fontWeight: 700, fontSize: "0.95rem" }}>
+								タイトル
+							</TableCell>
+							<TableCell sx={{ fontWeight: 700, fontSize: "0.95rem" }}>
+								URL
+							</TableCell>
+							<TableCell sx={{ fontWeight: 700, fontSize: "0.95rem" }}>
+								説明
+							</TableCell>
+							<TableCell sx={{ fontWeight: 700, fontSize: "0.95rem" }}>
+								操作
+							</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>

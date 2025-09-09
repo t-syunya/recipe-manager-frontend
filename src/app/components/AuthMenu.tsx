@@ -51,7 +51,7 @@ export default function AuthMenu() {
 					<ListItemIcon>
 						<HelpOutline fontSize="small" />
 					</ListItemIcon>
-					<ListItemText>Help</ListItemText>
+					<ListItemText>ヘルプ</ListItemText>
 				</MenuItem>
 				<MenuItem
 					onClick={() => {
