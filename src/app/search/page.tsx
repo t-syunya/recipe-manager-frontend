@@ -65,10 +65,16 @@ export default function SearchPage() {
 			<TableContainer component={Paper} sx={{ borderRadius: 3, boxShadow: 1 }}>
 				<Table>
 					<TableHead>
-						<TableRow>
-							<TableCell>レシピ名</TableCell>
-							<TableCell>カテゴリ</TableCell>
-							<TableCell>操作</TableCell>
+						<TableRow sx={{ bgcolor: "action.hover" }}>
+							<TableCell sx={{ fontWeight: 700, fontSize: "0.95rem" }}>
+								レシピ名
+							</TableCell>
+							<TableCell sx={{ fontWeight: 700, fontSize: "0.95rem" }}>
+								カテゴリ
+							</TableCell>
+							<TableCell sx={{ fontWeight: 700, fontSize: "0.95rem" }}>
+								操作
+							</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>

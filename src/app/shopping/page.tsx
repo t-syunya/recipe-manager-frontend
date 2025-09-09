@@ -66,10 +66,16 @@ export default function ShoppingListPage() {
 			<TableContainer component={Paper} sx={{ borderRadius: 3, boxShadow: 1 }}>
 				<Table>
 					<TableHead>
-						<TableRow>
-							<TableCell>商品名</TableCell>
-							<TableCell>数量</TableCell>
-							<TableCell>操作</TableCell>
+						<TableRow sx={{ bgcolor: "action.hover" }}>
+							<TableCell sx={{ fontWeight: 700, fontSize: "0.95rem" }}>
+								商品名
+							</TableCell>
+							<TableCell sx={{ fontWeight: 700, fontSize: "0.95rem" }}>
+								数量
+							</TableCell>
+							<TableCell sx={{ fontWeight: 700, fontSize: "0.95rem" }}>
+								操作
+							</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
